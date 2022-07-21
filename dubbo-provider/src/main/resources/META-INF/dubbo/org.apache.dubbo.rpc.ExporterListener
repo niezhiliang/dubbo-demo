@@ -1,0 +1,2 @@
+my=com.niezhiliang.dubbo.provider.rpc.MyExporterListener
+wrapper=com.niezhiliang.dubbo.provider.rpc.MyExporterListenerWrapper

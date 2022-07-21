@@ -1,0 +1,22 @@
+server:
+  port: 19999
+
+dubbo:
+  registry:
+    address: zookeeper://223.223.223.239:2181
+    session: 30000
+    timeout: 100000
+  scan:
+    base-packages: com.niezhiliang.dubbo.provider.rpc
+  provider:
+    timeout: 60000
+    version: 1.0
+  protocol:
+    name: dubbo
+    serialization: java
+    port: -1
+    threads:
+  consumer:
+    version: 1.0
+  application:
+    name: provider

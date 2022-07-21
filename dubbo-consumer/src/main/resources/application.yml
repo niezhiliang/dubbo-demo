@@ -1,0 +1,43 @@
+server:
+  port: 8888
+dubbo:
+  application:
+    name: consumer
+  registry:
+    address: zookeeper://223.223.223.239:2181
+    session: 30000
+    timeout: 100000
+  protocol:
+    name: dubbo
+    port: -1
+  consumer:
+    retries: 0
+    check: false
+    version: 1.0
+spring:
+  cloud:
+    sentinel:
+      transport:
+        # 配置Sentinel dashboard地址
+        dashboard: 10.1.175.183:8849
+        # 默认8719端口，键入被占用会自动从8719+1，直到找到未被占用的端口
+        port: 8719
+      # 配置Sentinel的持久化
+      datasource:
+        # 流控规则
+        flow:
+          nacos:
+            # 地址
+            serverAddr: localhost:8848
+            groupId: DEFAULT_GROUP
+            dataId: sentinel-flow
+            # 流控规则
+            ruleType: flow
+        # 熔断规则
+        degrade:
+          nacos:
+            namespace: b0300c44-6e5b-4f19-976d-b55227c0e6bc
+            serverAddr: zh-acm.hzzhyjy.cn:8848
+            groupId: DEFAULT_GROUP
+            dataId: sjt-sentinel-degrade
+            ruleType: degrade

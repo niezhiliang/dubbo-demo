@@ -1,0 +1,2 @@
+consumertraceid=com.niezhiliang.dubbo.tracking.filter.dubbo.ConsumerTraceIdFilter
+providertraceid=com.niezhiliang.dubbo.tracking.filter.dubbo.ProviderTraceIdFilter
