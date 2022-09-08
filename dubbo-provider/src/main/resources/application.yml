@@ -1,9 +1,10 @@
 server:
   port: 19999
 
+
 dubbo:
   registry:
-    address: zookeeper://223.223.223.239:2181
+    address: zookeeper://10.1.175.37:2181
     session: 30000
     timeout: 100000
   scan:
@@ -20,3 +21,15 @@ dubbo:
     version: 1.0
   application:
     name: provider
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://223.223.223.248:3306/chenmg_test
+    username: dbadmin
+    password: zhyjy@DB123
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

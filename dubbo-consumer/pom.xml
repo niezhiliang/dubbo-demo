@@ -54,5 +54,17 @@
             <artifactId>dubbo-link-tracking</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- swagger2 自动扫描生成文档 -->
+        <dependency>
+            <groupId>cn.willingxyz.restdoc</groupId>
+            <artifactId>RestDocSpringSwagger3</artifactId>
+            <version>0.2.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.therapi</groupId>
+            <artifactId>therapi-runtime-javadoc-scribe</artifactId>
+            <version>0.9.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>

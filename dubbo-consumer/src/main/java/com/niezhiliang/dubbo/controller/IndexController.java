@@ -7,6 +7,8 @@ import org.apache.dubbo.config.ReferenceConfig;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.rpc.service.GenericService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
@@ -62,8 +64,8 @@ public class IndexController {
      *
      * @return
      */
-    @GetMapping(value = "test")
-    public String test() throws Throwable {
+    @PostMapping(value = "test")
+    public String test(@RequestBody TestRequest request) throws Throwable {
         log.info("test------");
         return helloService.testTypeConvert(Arrays.asList((short)1, (short)2));
     }
@@ -90,6 +92,11 @@ public class IndexController {
         return helloService.exceptionCount();
     }
 
+    @GetMapping(value = "hello")
+    public String hello(String name) {
+        return "hello " + name;
+    }
+
     /**
      * 异常熔断降级代码
      * 
@@ -109,5 +116,4 @@ public class IndexController {
     public String blockHandler(BlockException e) {
         return "资源限流" + e.getMessage();
     }
-
 }
